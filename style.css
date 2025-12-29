@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calculator {
+    background-color: #22223b;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Display */
+.display {
+    background-color: #1a1a2e;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.previous-operand {
+    color: #9a8c98;
+    font-size: 1.2rem;
+    min-height: 24px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.current-operand {
+    color: #f2e9e4;
+    font-size: 2.5rem;
+    font-weight: 300;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* Buttons Grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    gap: 10px;
+}
+
+.btn {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+    background-color: #4a4e69;
+    color: #f2e9e4;
+}
+
+.btn:hover {
+    background-color: #6c757d;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Special button styles */
+.btn.clear {
+    background-color: #c9184a;
+    color: white;
+}
+
+.btn.clear:hover {
+    background-color: #e63946;
+}
+
+.btn.operator {
+    background-color: #4361ee;
+    color: white;
+}
+
+.btn.operator:hover {
+    background-color: #4895ef;
+}
+
+.btn.operator.active {
+    background-color: #7209b7;
+}
+
+.btn.equals {
+    background-color: #06d6a0;
+    color: #1a1a2e;
+    font-weight: 700;
+}
+
+.btn.equals:hover {
+    background-color: #37e5b5;
+}
+
+.btn.zero {
+    grid-column: span 2;
+    width: 100%;
+}
+
+.btn.decimal {
+    background-color: #4a4e69;
+}
+
+.hint {
+    margin-top: 20px;
+    color: #9a8c98;
+    font-size: 0.9rem;
+}
+
+/* Error state */
+.current-operand.error {
+    color: #e63946;
+    font-size: 1.5rem;
+}
